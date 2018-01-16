@@ -1,0 +1,33 @@
+<form #frm="ngForm" autocomplete="off">
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <h1>IA Developer Test</h1>
+    </div>
+
+    <div class="ui-g-6 ui-fluid">
+      <label>Texto</label>
+      <input pInputText name="text" ngModel [required]="true">
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Palindromo" [disabled]="frm.invalid" (click)="palindrome(frm)"></button>
+      <button pButton type="submit" label="FirstChar" [disabled]="frm.invalid" (click)="firstChar(frm)"></button>
+    </div>
+
+  </div>
+</form>
+
+<div class="ui-g">
+  <div class="ui-g-12">
+
+    <p-dataTable [value]="words"  [style]="{'text-align': 'center'}">
+      <p-header><strong>WORDS</strong></p-header>
+      <p-column field="text" header="Palavra"  [style]="{'width': '200px'}"></p-column>
+      <p-column field="palindrome" header="Palindromo?"></p-column>
+      <p-column field="firstChar" header="Primeiro Char Distinto"></p-column>
+      <p-column field="time" header="Tempo (nano)"></p-column>
+    </p-dataTable>
+
+  </div>
+</div>
